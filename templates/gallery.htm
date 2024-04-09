@@ -1,0 +1,30 @@
+{% extends "base.htm" %}
+{% block content %}
+<div class="d-flex flex-column justify-content-center">
+    <h3 class="mb-10">Пейзажи Марса</h3>
+    <div class="carousel slide mb-15" id="carouselMarsGallery" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for slide_path in slide_paths %}
+            <div class="carousel-item {% if loop.first %} active {% endif %}}">
+                <img class="d-block w-100" src="{{slide_path}}" alt="Слайд {{loop.index}}" width=800 height=450>
+            </div>
+            {% endfor %}
+            <a class="carousel-control-prev" href="#carouselMarsGallery" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Следующий</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselMarsGallery" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Предыдущий</span>
+            </a>
+        </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="inputPicture">Добавить картинку</label>
+            <input class="form-control-file" type="file" id="inputPicture" name="file">
+        </div>
+        <button class="btn btn-primary" type="sumbit">Загрузить</button>
+    </form>
+</div>
+{% endblock %}}
