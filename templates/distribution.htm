@@ -1,0 +1,17 @@
+{% extends "base.htm" %}
+
+{% block content %}
+<div>
+    <h2 class="pl-5">
+        Размещение по каютам
+    </h2>
+    {% set cabin = "Каюта №" %}
+    <div>
+        {% for member in members %}
+        <p>
+            {{member}} - {{cabin}} {{loop.index}}{% if loop.index == 1 %} - капитан корабля{% endif %}
+        </p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
