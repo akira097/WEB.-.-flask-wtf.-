@@ -1,0 +1,28 @@
+{% extends "base.htm" %}
+{% block content %}
+<div>
+    <h2 class="text-center my-2">
+        Оформление каюты
+    </h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Цвет стен</th>
+                <th scope="col">Эмблема</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="background-color:{{wall_color}}"></th>
+                <td>
+                    {% if is_adult %}
+                    <img src="/static/img/adult_alien.jpg" alt="Картинку украли пришельцы" height="500px">
+                    {% else %}
+                    <img src="/static/img/baby_alien.jpg" alt="Картинку украли пришельцы" height="500px">
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
